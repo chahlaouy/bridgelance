@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- importing tailwindcss -->
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!-- importing alpinejs -->
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
+    <!-- importing ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <title>Bridgelance | landing page</title>
+</head>
+<!-- <a href="#" class="px-4 py-2 font-normal"></a>
+<a href="#" class="px-4 py-2 font-normal">Services</a>
+<a href="#" class="px-4 py-2 font-normal">About</a>
+<a href="#" class="px-4 py-2 font-normal">Contact</a> -->
+<body class="bg-gray-100 text-gray-800">
+    <header class="w-full md:h-screen container mx-auto overflow-hidden">
+        <!-- Section nav bar -->
+        <nav class="flex items-center justify-between py-4 relative z-50">
+            <h1>
+                <img src="images/bridge-lance.png" alt="" class="w-56">
+            </h1>
+            <ul class="flex items-center text-gray-700">
+                <li class="mr-1">
+                    <a href="#" class="flex items-center px-3 py-2 font-normal transition duration-500 ease-in-out rounded-lg hover:bg-blue-400 hover:text-blue-700">
+                        <ion-icon name="home" class="text-xl mr-1"></ion-icon>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mr-1">
+                    <a href="#" class="flex items-center px-3 py-2 font-normal transition duration-500 ease-in-out rounded-lg hover:bg-blue-400 hover:text-blue-700">
+                        <ion-icon name="business" class="text-xl mr-1"></ion-icon>
+                        <span>Sectors</span>
+                    </a>
+                </li>
+                <li class="mr-1">
+                    <a href="#" class="flex items-center px-3 py-2 font-normal transition duration-500 ease-in-out rounded-lg hover:bg-blue-400 hover:text-blue-700">
+                        <ion-icon name="apps" class="text-xl mr-1"></ion-icon>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="mr-1">
+                    <a href="#" class="flex items-center px-3 py-2 font-normal transition duration-500 ease-in-out rounded-lg hover:bg-blue-400 hover:text-blue-700">
+                        <ion-icon name="home" class="text-xl mr-1"></ion-icon>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-3 py-2 font-normal transition duration-500 ease-in-out rounded-lg hover:bg-blue-400 hover:text-blue-700">
+                        <ion-icon name="mail-open" class="text-xl mr-1"></ion-icon>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- section header -->
+        <section class="relative z-40" x-data="{show: false}">
+            <!-- header image -->
+            <div class="absolute z-10 top-0 left-0 w-full h-screen">
+                <img src="images/bg-cover.jpg" alt="" class="w-full h-full bg-cover object-cover bg-center rounded">
+            </div>
+
+            <div class="w-full h-screen bg-gradient-to-r from-gray-100 to-transparent relative z-30">
+                <div class="relative z-30 flex items-center h-full">
+                    <div class="pl-32 max-w-4xl">
+                        <span class="tracking-wider leading-loose text-lg uppercase text-yellow-600 block font-semibold pl-4 border-l-4 border-blue-500">commited to success</span>
+                        <h1 class="capitalize text-7xl leading-snug text-gray-900">we help you to grow your business</h1>
+                        <p class="tracking-wide leading-loose font-normal">
+                            Providing a wide choice of products, services and solutions with a focused approach to quality and customer care.
+                        </p>
+                        <button class="relative z-40 bg-yellow-500 text-yellow-800 px-6 py-3 capitalize mt-4 rounded-lg ">our services</button>
+                    </div>
+                </div>
+                <!-- Prev/Next Arrows -->
+                <div class="z-30 absolute inset-0 flex">
+                    <div class="flex items-center justify-start w-1/2">
+                        <button
+                            class="flex items-center justify-center bg-gray-800 text-gray-100 font-bold rounded-full w-12 h-12 ml-6 focus:outline-none"
+                            x-on:click="activeSlide = activeSlide === 1 ? 3 : activeSlide - 1">
+                            <ion-icon name="chevron-back-outline" class="text-xl"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-end w-1/2">
+                        <button
+                            class="flex items-center justify-center bg-gray-800 text-gray-100 font-bold rounded-full w-12 h-12 mr-6 focus:outline-none"
+                            x-on:click="activeSlide = activeSlide === 3 ? 1 : activeSlide + 1">
+                            <ion-icon name="chevron-forward-outline" class="text-xl"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- section our services  -->
+
+    <section class="max-w-6xl h-screen container mx-auto flex items-center">
+        <div class="w-full">
+            <!-- header our services -->
+            <div>
+                <span class="tracking-wider leading-loose text-lg uppercase text-yellow-600 block font-semibold pl-4 border-l-4 border-blue-500">OUR TOP SERVICES</span>
+                <h1 class="capitalize text-6xl leading-snug text-gray-900">Our Best Services</h1>
+            </div>
+            <!-- cards our services -->
+            <div class="flex justify-around items-center mt-8 w-full">
+                <!-- card 1 -->
+                <div class="text-center w-72 p-4 rounded-lg shadow-lg bg-white hover:shadow-2xl">
+                    <div class="flex items-center justify-center">
+                        <img src="images/icon-1.png" alt="" class="w-40">
+                    </div>
+                    <h1 class="capitalize my-3 text-2xl font-semibold">strategy planning</h1>
+                    <p class="text-sm tracking-wide leading-loose font-normal">
+                        We have over 20,000 products and services available across the whole group.
+                    </p>
+                </div>
+                <!-- card 2 -->
+                <div class="text-center w-72 p-4 rounded-lg shadow-lg bg-white hover:shadow-2xl">
+                    <div class="flex items-center justify-center">
+                        <img src="images/icon-2.png" alt="" class="w-40">
+                    </div>
+                    <h1 class="capitalize my-3 text-2xl font-semibold">insurance service</h1>
+                    <p class="text-sm tracking-wide leading-loose font-normal">
+                        We have over 20,000 products and services available across the whole group.
+                    </p>
+                </div>
+                <!-- card 3 -->
+                <div class="text-center w-72 p-4 rounded-lg shadow-lg bg-white hover:shadow-2xl">
+                    <div class="flex items-center justify-center">
+                        <img src="images/icon-3.png" alt="" class="w-40">
+                    </div>
+                    <h1 class="capitalize my-3 text-2xl font-semibold">audit and evaluation</h1>
+                    <p class="text-sm tracking-wide leading-loose font-normal">
+                        We have over 20,000 products and services available across the whole group.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section our services 2  -->
+
+    <section class="w-full h-screen flex items-center bg-gradient-to-r from-blue-600 to-blue-800 py-12">
+        <div class="w-full flex items-center container mx-auto">
+            
+            <!-- cards our services -->
+            <div class="" style="max-width: 700px;">
+                <img src="images/bg-about.jpg" alt="" class="rounded-2xl shadow-2xl w-full" >
+            </div>
+            <!-- header our services -->
+            <div class="text-gray-100 p-8 flex-1">
+                <span class="tracking-wider leading-loose text-lg uppercase block font-semibold pl-4 border-l-4 border-yellow-500">OUR TOP SERVICES</span>
+                <h1 class="capitalize text-7xl leading-snug">Our Best Services</h1>
+                <div class="max-w-xl">
+
+                    <p class="text-sm tracking-wide leading-loose font-normal my-2">
+                        The Commercial Services Group is one of largest, local authority owned, trading organisations of its kind.
+                    </p>
+                    <p class="text-sm tracking-wide leading-loose font-normal my-2">
+                        Creating a positive social and economic impact. Social value is at the heart of our Group.
+                    </p>
+                    <p class="text-sm tracking-wide leading-loose font-normal my-2">
+                        Providing a wide choice of products, services and solutions with a focused approach to quality and customer care.
+                    </p>
+                </div>
+                <button class="border-2 border-yellow-500 text-gray-100 px-6 py-3 capitalize mt-4 rounded-lg focus:outline-none">more about us</button>
+                
+            </div>
+        </div>
+    </section>
+    <!-- section our sectors  -->
+
+    <section class="max-w-6xl h-screen container mx-auto flex items-center">
+        <div class="w-full">
+            <!-- header our sectors -->
+            <div>
+                <span class="tracking-wider leading-loose text-lg uppercase text-yellow-600 block font-semibold pl-4 border-l-4 border-blue-500">our sectors</span>
+                <h1 class="capitalize text-6xl leading-snug text-gray-900">select your sector</h1>
+            </div>
+            <!-- cards our services -->
+            <!-- card collection 1 -->
+            <div class="mt-4 md:mt-8 md:flex md:justify-between mx-auto">
+
+                <!-- card 1 -->
+
+                <div id="card-icon" class="p-4 rounded-2xl h-80 relative z-20" x-data="{hover: false}" x-on:mouseover="hover = true" x-on:mouseover.away="hover = false" :class="hover ? 'shadow-2xl bg-white' : 'shadow bg-gray-100'">
+                    <div class="transition duration-200 ease-in-out w-20 h-20 flex items-center justify-center rounded-3xl shadow-inner" :class="hover ? 'text-gray-100 bg-blue-500 border-2 border-blue-500' : 'text-gray-500 bg-gray-200 border-2 border-gray-300'">
+                        <ion-icon name="pencil" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="transition duration-200 ease-in-out capitalize mt-4 text-sm w-48" :class="hover ? 'text-blue-500' : 'text-gray-800' ">Conception Graphique</h3>
+                    <p class="transition duration-200 ease-in-out tracking-wider leading-loose w-48 text-xs" :class="hover ? 'text-black' : 'text-gray-700'">Conception moderne, Design novateur, conception graphique, Charte graphique, Logo, Packaging ...</p>
+                    <div class="flex items-center justify-end absolute bottom-0 right-0 z-30 md:-mr-4">
+                        <ion-icon name="arrow-forward-circle" class="text-3xl text-blue-500" x-show.transition.duration.200ms="hover"></ion-icon>
+                    </div>
+                </div>
+                <!-- card 2 -->
+
+                <div id="card-icon" class="p-4 rounded-2xl h-80 relative z-20" x-data="{hover: false}" x-on:mouseover="hover = true" x-on:mouseover.away="hover = false" :class="hover ? 'shadow-2xl bg-white' : 'shadow bg-gray-100'">
+                    <div class="transition duration-200 ease-in-out w-20 h-20 flex items-center justify-center rounded-3xl shadow-inner" :class="hover ? 'text-gray-100 bg-blue-500 border-2 border-blue-500' : 'text-gray-500 bg-gray-200 border-2 border-gray-300'">
+                        <ion-icon name="pencil" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="transition duration-200 ease-in-out capitalize mt-4 text-sm w-48" :class="hover ? 'text-blue-500' : 'text-gray-800' ">Conception Graphique</h3>
+                    <p class="transition duration-200 ease-in-out tracking-wider leading-loose w-48 text-xs" :class="hover ? 'text-black' : 'text-gray-700'">Conception moderne, Design novateur, conception graphique, Charte graphique, Logo, Packaging ...</p>
+                    <div class="flex items-center justify-end absolute bottom-0 right-0 z-30 md:-mr-4">
+                        <ion-icon name="arrow-forward-circle" class="text-3xl text-blue-500" x-show.transition.duration.200ms="hover"></ion-icon>
+                    </div>
+                </div>
+                <!-- card 3 -->
+
+                <div id="card-icon" class="p-4 rounded-2xl h-80 relative z-20" x-data="{hover: false}" x-on:mouseover="hover = true" x-on:mouseover.away="hover = false" :class="hover ? 'shadow-2xl bg-white' : 'shadow bg-gray-100'">
+                    <div class="transition duration-200 ease-in-out w-20 h-20 flex items-center justify-center rounded-3xl shadow-inner" :class="hover ? 'text-gray-100 bg-blue-500 border-2 border-blue-500' : 'text-gray-500 bg-gray-200 border-2 border-gray-300'">
+                        <ion-icon name="pencil" class="text-4xl"></ion-icon>
+                    </div>
+                    <h3 class="transition duration-200 ease-in-out capitalize mt-4 text-sm w-48" :class="hover ? 'text-blue-500' : 'text-gray-800' ">Conception Graphique</h3>
+                    <p class="transition duration-200 ease-in-out tracking-wider leading-loose w-48 text-xs" :class="hover ? 'text-black' : 'text-gray-700'">Conception moderne, Design novateur, conception graphique, Charte graphique, Logo, Packaging ...</p>
+                    <div class="flex items-center justify-end absolute bottom-0 right-0 z-30 md:-mr-4">
+                        <ion-icon name="arrow-forward-circle" class="text-3xl text-blue-500" x-show.transition.duration.200ms="hover"></ion-icon>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
